@@ -6,13 +6,13 @@ import kakao_logo from './assets/kakao-logo.png';
 import kakao_profile from './assets/kakao-profile.jpg';
 import message_profile from './assets/message-profile.png';
 
-interface Message {
+type Message = {
   id: string;
   sender: string;
   content: string;
   time: string;
   isKakao?: boolean;
-}
+};
 
 const NotificationScreen = () => {
   const [time, setTime] = React.useState(new Date());
