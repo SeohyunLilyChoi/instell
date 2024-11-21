@@ -8,7 +8,7 @@ export default {
         },
       },
       fontFamily: {
-        SF: ['San Francisco', 'Pretendard-Regular', 'sans-serif'],
+        SF: ['Pretendard-Regular', 'sans-serif'],
       },
     },
   },
