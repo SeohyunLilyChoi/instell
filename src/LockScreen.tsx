@@ -52,7 +52,7 @@ const NotificationScreen = () => {
 
   return (
     <div className="flex h-screen bg-black justify-center items-center">
-      <div className="flex-col w-[390px] h-[750px] mt-10 mb-10 rounded-xl bg-gradient-to-br from-purple-500 via-blue-600 to-teal-800 p-4 text-black">
+      <div className="flex-col w-[390px] h-5/6 mt-10 mb-10 rounded-xl bg-gradient-to-br from-purple-500 via-blue-600 to-teal-800 p-4 text-black">
         {/* Status Bar */}
         <div className="flex justify-between items-center mb-4">
           <span className="text-lg">
@@ -138,7 +138,6 @@ const NotificationScreen = () => {
             </div>
           ))}
         </div>
-        <div className="mt-[250px] justify-self-center w-40 h-1 bg-black rounded-full mb-6"></div>
       </div>
     </div>
   );
