@@ -691,7 +691,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/types@npm:^0.1.15":
+"@swc/types@npm:^0.1.15, @swc/types@npm:^0.1.16":
   version: 0.1.16
   resolution: "@swc/types@npm:0.1.16"
   dependencies:
@@ -3720,6 +3720,7 @@ __metadata:
   resolution: "seminar-2024-frontend-template@workspace:."
   dependencies:
     "@mui/icons-material": "npm:^6.1.7"
+    "@swc/types": "npm:^0.1.16"
     "@types/node": "npm:22.7.5"
     "@types/react": "npm:18.3.11"
     "@types/react-dom": "npm:18.3.1"

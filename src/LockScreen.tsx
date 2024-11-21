@@ -6,13 +6,13 @@ import kakao_logo from './assets/kakao-logo.png';
 import kakao_profile from './assets/kakao-profile.jpg';
 import message_profile from './assets/message-profile.png';
 
-interface Message {
+type Message = {
   id: string;
   sender: string;
   content: string;
   time: string;
   isKakao?: boolean;
-}
+};
 
 const NotificationScreen = () => {
   const [time, setTime] = React.useState(new Date());
@@ -31,7 +31,7 @@ const NotificationScreen = () => {
       id: '1',
       sender: '친구',
       content: '오랜만에 얼굴 좀 보자. 너무 방에만 있지 말고.',
-      time: '34분 전',
+      time: '37분 전',
       isKakao: true,
     },
     {
