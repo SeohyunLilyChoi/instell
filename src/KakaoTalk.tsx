@@ -1,5 +1,5 @@
 import { BatteryFullIcon, WifiIcon } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import albamon_logo from './assets/albamon-logo.png';
 import chatting from './assets/chatting.png';
