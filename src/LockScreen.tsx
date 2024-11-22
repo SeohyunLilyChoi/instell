@@ -54,7 +54,12 @@ export default function LockScreen() {
 
   return (
     <div className="flex h-screen bg-black justify-center items-center">
-      <div className="flex-col w-[390px] h-screen mt-10 mb-10 rounded-xl bg-gradient-to-br from-purple-500 via-blue-600 to-teal-800 p-4 text-black">
+      <div
+        onClick={() => {
+          navigate(`/home`);
+        }}
+        className="flex-col w-[390px] h-screen mt-10 mb-10 rounded-xl bg-gradient-to-br from-purple-800 via-blue-800 to-teal-800 p-4 text-white"
+      >
         {/* Status Bar */}
         <div className="flex justify-between items-center mb-4">
           <span className="text-lg">
@@ -91,7 +96,7 @@ export default function LockScreen() {
         </div>
 
         {/* Notifications */}
-        <div className="space-y-2 drop-shadow-xl">
+        <div className="space-y-3 text-black">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -100,7 +105,7 @@ export default function LockScreen() {
                   navigate(`/kakao`);
                 }
               }}
-              className="bg-white/30 backdrop-blur-lg rounded-2xl p-3"
+              className="shadow-2xl bg-white/40 backdrop-blur-lg rounded-2xl p-3"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gray-300/30 rounded-full flex items-center justify-center">
@@ -145,6 +150,7 @@ export default function LockScreen() {
             </div>
           ))}
         </div>
+        <div className="fixed bottom-4 inset-x-0 justify-self-center w-[140px] border-b-4 border-white"></div>
       </div>
     </div>
   );
