@@ -1,5 +1,6 @@
 import { BatteryFullIcon, WifiIcon } from 'lucide-react';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import message_logo from './assets/iphone-message.png';
 import kakao_logo from './assets/kakao-logo.png';
@@ -14,8 +15,9 @@ type Message = {
   isKakao?: boolean;
 };
 
-const NotificationScreen = () => {
+export default function LockScreen() {
   const [time, setTime] = React.useState(new Date());
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -93,6 +95,11 @@ const NotificationScreen = () => {
           {messages.map((message) => (
             <div
               key={message.id}
+              onClick={() => {
+                if (message.id === '1') {
+                  navigate(`/kakao`);
+                }
+              }}
               className="bg-white/30 backdrop-blur-lg rounded-2xl p-3"
             >
               <div className="flex items-center gap-3">
@@ -141,6 +148,4 @@ const NotificationScreen = () => {
       </div>
     </div>
   );
-};
-
-export default NotificationScreen;
+}
