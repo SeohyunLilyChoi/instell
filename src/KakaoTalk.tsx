@@ -1,5 +1,6 @@
 import { BatteryFullIcon, WifiIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import albamon_logo from './assets/albamon-logo.png';
 import chatting from './assets/chatting.png';
@@ -16,6 +17,7 @@ import today_logo from './assets/today-logo.png';
 
 export default function KakaoTalk() {
   const [time, setTime] = useState(new Date());
+  const navigate = useNavigate();
   const [messages, setMessages] = useState([
     {
       id: '1',
@@ -58,7 +60,7 @@ export default function KakaoTalk() {
 
   return (
     <div className="flex h-screen bg-black justify-center items-center">
-      <div className="flex-col w-[390px] h-screen mt-10 mb-10 rounded-xl bg-white p-4 text-black">
+      <div className="flex-col w-[390px] overflow-clip h-screen mt-10 mb-10 rounded-xl bg-white p-4 text-black">
         {/* Status Bar */}
         <div className="flex justify-between items-center mb-4">
           <span className="text-lg">
@@ -76,7 +78,7 @@ export default function KakaoTalk() {
           </div>
         </div>
         <div className="text-3xl font-semibold">채팅</div>
-        <div className="grow">
+        <div className="grow overscroll-none">
           {/* 메시지 목록 */}
           {messages.map((message) => (
             <div
@@ -191,7 +193,7 @@ export default function KakaoTalk() {
           <div className="flex pt-7">
             <img src={cu_logo} className="w-12 mr-3 rounded-2xl"></img>
             <div className="grow">
-              <p className="text-m font-semibold text-gray-800">CU(씨유)</p>
+              <p className="text-m font-semibold text-gray-800">알바몬</p>
               <p className="text-sm text-gray-500">
                 [정기적 수신동의 확인 안내]
               </p>
@@ -208,25 +210,31 @@ export default function KakaoTalk() {
         <div className="fixed bottom-0 inset-x-0 bg-white shadow-md rounded-b-xl flex w-[390px] px-8 justify-center justify-self-center justify-between items-end">
           <div className="flex-col justify-items-center">
             <img src={friend} className="w-6 mb-1 pt-3 rounded-xl" />
-            <p className="pb-2">친구</p>
+            <p className="pb-8">친구</p>
           </div>
           <div className="flex-col justify-items-center">
             <img src={chatting} className="w-6 mb-1 pt-3 rounded-xl" />
-            <p className="pb-2">채팅</p>
+            <p className="pb-8">채팅</p>
           </div>
           <div className="flex-col justify-items-center">
             <img src={openchatting} className="w-6 mb-1 pt-3 rounded-xl" />
-            <p className="pb-2">오픈채팅</p>
+            <p className="pb-8">오픈채팅</p>
           </div>
           <div className="flex-col justify-items-center">
             <img src={shopping} className="w-6 mb-1 pt-3 rounded-xl" />
-            <p className="pb-2">쇼핑</p>
+            <p className="pb-8">쇼핑</p>
           </div>
           <div className="flex-col justify-items-center">
             <img src={more} className="w-6 mb-3 pt-3 rounded-xl" />
-            <p className="pb-2">더보기</p>
+            <p className="pb-8">더보기</p>
           </div>
         </div>
+        <div
+          onClick={() => {
+            navigate(`/home`);
+          }}
+          className="fixed bottom-4 inset-x-0 justify-self-center w-[140px] border-b-4 border-black"
+        ></div>
       </div>
     </div>
   );
