@@ -15,25 +15,24 @@ import openchatting from './assets/openchatting.png';
 import shopping from './assets/shopping.png';
 import today_logo from './assets/today-logo.png';
 
-export default function KakaoTalk() {
+// 메시지 타입 정의
+type Message = {
+  id: string;
+  sender: string;
+  content: string;
+  time: string;
+  unreadCount: number;
+};
+
+// Props 타입 정의
+type KakaoTalkProps = {
+  messages: Message[];
+  setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
+};
+
+export default function KakaoTalk({ messages, setMessages }: KakaoTalkProps) {
   const [time, setTime] = useState(new Date());
   const navigate = useNavigate();
-  const [messages, setMessages] = useState([
-    {
-      id: '1',
-      sender: '친구',
-      content: '오랜만에 얼굴 좀 보자. 너무 방에만 있지 말고.',
-      time: '37분 전',
-      unreadCount: 2, // 메시지별 안 읽은 메시지 개수
-    },
-    {
-      id: '2',
-      sender: '엄마',
-      content: '밥은 먹었니?',
-      time: '어제',
-      unreadCount: 1,
-    },
-  ]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -50,6 +49,7 @@ export default function KakaoTalk() {
         message.id === messageId ? { ...message, unreadCount: 0 } : message,
       ),
     );
+    navigate(`/kakaoF/${messageId}`);
   };
 
   const getTwoDaysAgo = () => {
