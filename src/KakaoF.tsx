@@ -49,6 +49,12 @@ export default function KakaoF({ messages }: KakaoFProps) {
     return DayAgo;
   };
 
+  const getThreeDayAgo = () => {
+    const ThreeDayAgo = new Date(time);
+    ThreeDayAgo.setDate(time.getDate() - 3);
+    return ThreeDayAgo;
+  };
+
   if (message !== undefined) {
     return (
       <div className="flex h-screen bg-black justify-center items-center">
@@ -89,38 +95,71 @@ export default function KakaoF({ messages }: KakaoFProps) {
             </div>
           </div>
 
-          <div>
-            <p className="flex w-fit px-3 mb-3 justify-self-center items-center rounded-full text-sm bg-gray-400 opacity-60">
-              <Calendar className="w-4 mr-2 opacity-65" />
-              {getDayAgo().toLocaleDateString('ko-KR', {
-                month: 'long',
-                day: 'numeric',
-                weekday: 'long',
-              })}
-            </p>
-            <div className="flex mb-6">
-              <img src={kakao_profile} className="w-10 h-10 mr-3 rounded-xl" />
-              <div>
-                <p className="font-semibold text-gray-700 mb-2">
-                  {message.sender}
-                </p>
-                <p className="w-fit max-w-[200px] px-3 py-2 mb-2 rounded-xl bg-white">
-                  잘 지내고 있는거지?
-                </p>
-                <p className="max-w-[200px] px-3 py-2 rounded-xl bg-white">
-                  반찬이라도 좀 가져다줄까?
-                </p>
+          {/* Additional Message */}
+          {message.id === '1' && ( // id가 '1'일 때만 렌더링
+            <div>
+              <p className="flex w-fit px-3 mb-3 justify-self-center items-center rounded-full text-sm bg-gray-400 opacity-60">
+                <Calendar className="w-4 mr-2 opacity-65" />
+                {getThreeDayAgo().toLocaleDateString('ko-KR', {
+                  month: 'long',
+                  day: 'numeric',
+                  weekday: 'long',
+                })}
+              </p>
+              <div className="flex mb-6">
+                <img
+                  src={kakao_profile}
+                  className="w-10 h-10 mr-3 rounded-xl"
+                />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-2">
+                    {message.sender}
+                  </p>
+                  <p className="w-fit max-w-[200px] px-3 py-2 mb-2 rounded-xl bg-white">
+                    요즘 뭐하고 지내냐
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex mb-6 justify-self-end">
-              <div>
-                <p className="w-fit max-w-[200px] px-3 py-2 mb-2 rounded-xl bg-white bg-yellow-300">
-                  됐어요
-                </p>
+          )}
+          {message.id === '2' && ( // id가 '2'일 때만 렌더링
+            <div>
+              <p className="flex w-fit px-3 mb-3 justify-self-center items-center rounded-full text-sm bg-gray-400 opacity-60">
+                <Calendar className="w-4 mr-2 opacity-65" />
+                {getDayAgo().toLocaleDateString('ko-KR', {
+                  month: 'long',
+                  day: 'numeric',
+                  weekday: 'long',
+                })}
+              </p>
+              <div className="flex mb-6">
+                <img
+                  src={kakao_profile}
+                  className="w-10 h-10 mr-3 rounded-xl"
+                />
+                <div>
+                  <p className="font-semibold text-gray-700 mb-2">
+                    {message.sender}
+                  </p>
+                  <p className="w-fit max-w-[200px] px-3 py-2 mb-2 rounded-xl bg-white">
+                    잘 지내고 있는거지?
+                  </p>
+                  <p className="max-w-[200px] px-3 py-2 rounded-xl bg-white">
+                    반찬이라도 좀 가져다줄까?
+                  </p>
+                </div>
+              </div>
+              <div className="flex mb-6 justify-self-end">
+                <div>
+                  <p className="w-fit max-w-[200px] px-3 py-2 mb-2 rounded-xl bg-white bg-yellow-300">
+                    됐어요
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
+          {/* Message Content */}
           <p className="flex w-fit px-3 mb-3 justify-self-center items-center rounded-full text-sm bg-gray-400 opacity-60">
             <Calendar className="w-4 mr-2 opacity-65" />
             {time.toLocaleDateString('ko-KR', {
