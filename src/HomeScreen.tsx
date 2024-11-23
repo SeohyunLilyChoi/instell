@@ -40,7 +40,7 @@ export default function HomeScreen() {
         </div>
         <div>
           <div className="flex">
-            <div className="justify-items-center ml-1 mr-5">
+            <div className="justify-items-center ml-1 mr-5 cursor-pointer">
               <img
                 src={KakaoIcon}
                 onClick={() => {
@@ -50,7 +50,7 @@ export default function HomeScreen() {
               />
               <p>카카오톡</p>
             </div>
-            <div className="justify-items-center">
+            <div className="justify-items-center cursor-pointer">
               <img src={PhotoIcon} className="w-16 rounded-xl mb-1" />
               <p>사진</p>
             </div>

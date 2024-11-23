@@ -58,7 +58,7 @@ export default function LockScreen() {
         onClick={() => {
           navigate(`/home`);
         }}
-        className="flex-col w-[390px] h-screen mt-10 mb-10 rounded-xl bg-gradient-to-br from-purple-800 via-blue-800 to-teal-800 p-4 text-white"
+        className="flex-col w-[390px] h-screen mt-10 mb-10 rounded-xl bg-gradient-to-br from-purple-800 via-blue-800 to-teal-800 p-4 text-white cursor-pointer"
       >
         {/* Status Bar */}
         <div className="flex justify-between items-center mb-4">
@@ -110,7 +110,7 @@ export default function LockScreen() {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gray-300/30 rounded-full flex items-center justify-center">
                   {message.isKakao === true ? (
-                    <div>
+                    <div className="cursor-pointer">
                       <img
                         src={kakao_logo}
                         className="absolute bottom-3 left-10 w-5 rounded-lg"
@@ -135,7 +135,7 @@ export default function LockScreen() {
                     </div>
                   )}
                 </div>
-                <div className="flex-1 pl-2">
+                <div className="flex-1 pl-2 cursor-pointer">
                   <div className="flex justify-between items-start">
                     <span className="font-medium font-semibold">
                       {message.sender}
