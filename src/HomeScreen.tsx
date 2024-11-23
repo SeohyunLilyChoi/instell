@@ -51,7 +51,13 @@ export default function HomeScreen() {
               <p>카카오톡</p>
             </div>
             <div className="justify-items-center cursor-pointer">
-              <img src={PhotoIcon} className="w-16 rounded-xl mb-1" />
+              <img
+                src={PhotoIcon}
+                onClick={() => {
+                  navigate(`/album`);
+                }}
+                className="w-16 rounded-xl mb-1"
+              />
               <p>사진</p>
             </div>
           </div>

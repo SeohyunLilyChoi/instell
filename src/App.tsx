@@ -4,10 +4,13 @@ import './App.css';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Album from './Album';
 import HomeScreen from './HomeScreen';
 import KakaoF from './KakaoF';
 import KakaoTalk from './KakaoTalk';
 import LockScreen from './LockScreen';
+import PhotoViewer from './PhotoViewer';
+import RecentAlbum from './RecentAlbum';
 
 export default function App() {
   const [messages, setMessages] = useState([
@@ -37,6 +40,9 @@ export default function App() {
           element={<KakaoTalk messages={messages} setMessages={setMessages} />}
         />
         <Route path="/kakaoF/:id" element={<KakaoF messages={messages} />} />
+        <Route path="/album" element={<Album />} />
+        <Route path="/recentAlbum" element={<RecentAlbum />} />
+        <Route path="/photo/:id" element={<PhotoViewer />} />
       </Routes>
     </BrowserRouter>
   );
