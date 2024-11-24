@@ -2,7 +2,7 @@ import { BatteryFullIcon, WifiIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import kakao_profile from './assets/kakao-profile.jpg';
+import album_photo_1 from './assets/album_photo_1.png';
 
 export default function Album() {
   const [time, setTime] = useState(new Date());
@@ -59,7 +59,7 @@ export default function Album() {
           <div>
             <div>
               <img
-                src={kakao_profile}
+                src={album_photo_1}
                 onClick={() => {
                   navigate(`/recentAlbum`);
                 }}

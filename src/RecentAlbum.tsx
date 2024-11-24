@@ -3,14 +3,15 @@ import { ChevronLeft } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import KakaoIcon from './assets/kakao-logo.png';
-import kakao_profile from './assets/kakao-profile.jpg';
+import album_photo_1 from './assets/album_photo_1.png';
+import album_photo_2 from './assets/album_photo_2.png';
+import album_photo_3 from './assets/album_photo_3.png';
 import more from './assets/more.png';
 
 const photos = [
-  { id: '1', src: kakao_profile, alt: 'Photo 1' },
-  { id: '2', src: KakaoIcon, alt: 'Photo 2' },
-  { id: '3', src: kakao_profile, alt: 'Photo 3' },
+  { id: '1', src: album_photo_1, alt: 'Photo 1' },
+  { id: '2', src: album_photo_2, alt: 'Photo 2' },
+  { id: '3', src: album_photo_3, alt: 'Photo 3' },
 ];
 
 export default function RecentAlbum() {
